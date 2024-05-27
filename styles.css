@@ -1,0 +1,26 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #212121;
+  padding: 20px;
+  color: #fff;
+}
+h1 {
+  color: #fff;
+}
+input, button {
+  margin: 10px;
+ 
+}
+.hi{
+  margin-left: 80px;
+}
+
+.number{
+  
+  margin-left: 24px;
+}
+.Gmail{
+  margin-left: 42px;
+}
+
