@@ -6,7 +6,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object Challenge</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #212121;
+  padding: 20px;
+  color: #fff;
+}
+h1 {
+  color: #fff;
+}
+input, button {
+  margin: 10px;
+ 
+}
+.hi{
+  margin-left: 80px;
+}
+
+.number{
+  
+  margin-left: 24px;
+}
+.Gmail{
+  margin-left: 42px;
+}</style>
 </head>
 <body>
     <h1>Spread operator</h1>
