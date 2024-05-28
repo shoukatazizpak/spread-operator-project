@@ -1,3 +1,4 @@
+
 // script.js
 
 // Original object with initial data
@@ -8,40 +9,55 @@ const originalObject = {
   number: ''
 };
 
-// Flag to track if it's the first submission
-let firstSubmit = true;
+const spreadOperater = {...originalObject};
 
 // Function to handle form submission
 document.getElementById('submitButton').addEventListener('click', function (event) {
   event.preventDefault();
 
-  // Extract form data
-  const formData = {
-      firstName: document.getElementById('firstName').value,
-      lastName: document.getElementById('lastName').value,
-      gmail: document.getElementById('email').value,
-      number: document.getElementById('number').value
-  };
-
-  // Update original data only on the first submission
-  if (firstSubmit) {
-      originalObject.firstName = formData.firstName;
-      originalObject.lastName = formData.lastName;
-      originalObject.gmail = formData.gmail;
-      originalObject.number = formData.number;
-      firstSubmit = false;
-  }
-
+  originalObject.firstName =document.getElementById("firstName").value;
+  originalObject.lastName = document.getElementById("lastName").value;
+  originalObject.gmail = document.getElementById("email").value;
+  originalObject.number = document.getElementById("number").value;
+  document.getElementById("button1").addEventListener("click", function(e){
+    e.preventDefault();
+    spreadOperater.firstName = document.getElementById("firstName").value;
+    spreadOperater.lastName = document.getElementById("lastName").value;
+    spreadOperater.gmail = document.getElementById("email").value;
+    spreadOperater.number = document.getElementById("number").value;
+    document.getElementById("outputC").innerHTML = `Name: ${spreadOperater.firstName} ${spreadOperater.lastName}`
+  document.getElementById("outputGmailC").innerHTML = `Gname: ${spreadOperater.gmail}`;
+    document.getElementById("outputNumberC").innerHTML = `Number: ${spreadOperater.number}`;
+  
+  });
+  
   // Display results
-  document.getElementById('outputO').textContent = `Name: ${originalObject.firstName} ${originalObject.lastName}`;
-  document.getElementById('outputGmailO').textContent = `Gmail: ${originalObject.gmail}`;
-  document.getElementById('outputNumberO').textContent = `Number: ${originalObject.number}`;
+  document.getElementById('outputO').innerHTML = `Name: ${originalObject.firstName} ${originalObject.lastName}`;
+  document.getElementById('outputGmailO').innerHTML = `Gmail: ${originalObject.gmail}`;
+  document.getElementById('outputNumberO').innerHTML = `Number: ${originalObject.number}`;
+  
+  // spreadOperater.firstName  = simple
+  // spreadOperater.lastName = simple
 
-  // Display merged data (spread operator doesn't affect originalObject)
-  document.getElementById('outputC').textContent = `Name: ${formData.firstName} ${formData.lastName}`;
-  document.getElementById('outputGmailC').textContent = `Gmail: ${formData.gmail}`;
-  document.getElementById('outputNumberC').textContent = `Number: ${formData.number}`;
+ if (spreadOperater === undefined)
+ { document.getElementById('outputC').innerHTML = `Name: ${originalObject.firstName} ${originalObject.lastName}`;
+  document.getElementById('outputGmailC').innerHTML = `Gmail: ${originalObject.gmail}`;
+  document.getElementById('outputNumberC').innerHTML = `Number: ${originalObject.number}`;
+}
 });
+ document.getElementById("button1").addEventListener("click", function(e){
+  e.preventDefault();
+  spreadOperater.firstName = document.getElementById("firstName").value;
+  spreadOperater.lastName = document.getElementById("lastName").value;
+  spreadOperater.gmail = document.getElementById("email").value;
+  spreadOperater.number = document.getElementById("number").value;
+  document.getElementById("outputC").innerHTML = `Name: ${spreadOperater.firstName} ${spreadOperater.lastName}`
+document.getElementById("outputGmailC").innerHTML = `Gmail: ${spreadOperater.gmail}`;
+  document.getElementById("outputNumberC").innerHTML = `Number: ${spreadOperater.number}`;
+
+});
+
+
 
 // Function to handle restart button
 document.getElementById('restartButton').addEventListener('click', function () {
